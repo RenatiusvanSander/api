@@ -1,0 +1,15 @@
+{
+  "database": "inventar",
+  "username": "inventar",
+  "password": "Te32%Da17",
+  "options": {
+    "host": "localhost",
+    "dialect": "mysql",
+    "pool": {
+      "max": 5,
+      "min": 0,
+      "idle": 10000
+    },
+    "storage": null
+  }
+}
