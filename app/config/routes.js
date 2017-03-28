@@ -7,8 +7,7 @@ var inventoryItemController = require('../controllers/inventory-item.js');
 module.exports = function (app) {
   app.get('/', inventoryItemController.getApiUptime);
   app.get('/api/inventory-items/', inventoryItemController.getInventoryItems);
-  app.get('/api/inventory-items/borrow-items/',
-    inventoryItemController.validateBarcodeRequest,
+  app.get('/api/inventory-items/borrow-items',
     inventoryItemController.getBorrowInventoryItem);
   app.get('/api/inventory-items/return-items',
     inventoryItemController.validateBarcodeRequest,
@@ -19,7 +18,7 @@ module.exports = function (app) {
   app.post('/api/inventory-items',
     inventoryItemController.validateInsertInventoryItems,
     inventoryItemController.postInventoryItems);
-  app.delete('/api/inventory-items/:inventoryNo',
-    inventoryItemController.validateDeleteInventoryItems,
+  app.delete('/api/inventory-items/:inventoryNo'/*,
+    inventoryItemController.validateDeleteInventoryItems*/,
     inventoryItemController.deleteInventoryItems);
 };

@@ -72,6 +72,10 @@ var getScannedInventoryItems = function (req, res, next) {
 // borrows Inventory-Items via BarcodeApp
 var getBorrowInventoryItem = function (req, res, next) {
   // borrow Inventory-Items here
+  if(isNaN(req.query.barcode)) {
+    res.status(404).send('There have been validation errors!');
+  }
+
   var inventoryItemBarcode = req.query.barcode; // inputted barcode
   var inventoryItemBorrower = req.query.borrower; // inputted borrower
 
@@ -84,12 +88,13 @@ var getBorrowInventoryItem = function (req, res, next) {
           barcode: inventoryItemBarcode
         }
       })
-    .then(function onSuccess(result) {
+    .then(function (result) {
       // response sends inventory Item
-      console.log(result);
       res.json(result);
     })
-    .catch(next()); // use error handler in app.js
+    .catch(function(err) {
+      next();
+    }); // use error handler in app.js
 
 };
 
@@ -192,6 +197,9 @@ var postInventoryItems = function (req, res, next) {
 
 // delete an InventoryItem
 var deleteInventoryItems = function (req, res, next) {
+  if(isNaN(req.params.inventoryNo)) {
+    res.status(404).send('There have been validation errors!');
+  }
   var itemInventoryNo = req.params.inventoryNo; // item-inventory-number
 
   // model updates the entry to ENUM deleted
@@ -216,16 +224,15 @@ var deleteInventoryItems = function (req, res, next) {
       else {
         res.sendStatus(200);
       }
-
     })
-    .catch(next());
+    .catch(function(err) {
+      console.log(err);
+      next();
+    });
 };
 
 var validateBarcodeRequest = function (req, res, next) {
   req.checkQuery('barcode', 'Invalid Barcode').isNumeric(); // valid Number and not empty
-  //req.check('barcode').isInt(); // valid Number and not empty
-  //console.log(req.params.barcode);
-  //console.log(req.query.barcode);
   req.getValidationResult()
     .then(function (result) {
       result.throw();
