@@ -26,8 +26,8 @@
       <file leaf-file-name="cors-whitelist.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/config/cors-whitelist.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="28" lean-forward="false" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+            <state relative-caret-position="330">
+              <caret line="22" column="29" lean-forward="false" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -37,7 +37,7 @@
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
-              <caret line="33" column="19" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="22" />
+              <caret line="33" column="19" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -236,7 +236,7 @@
     <property name="settings.editor.splitter.proportion" value="0.27307326" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/ionic_projects/myApp" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -403,12 +403,12 @@
       <workItem from="1491464625591" duration="3848000" />
       <workItem from="1491468903549" duration="1469000" />
       <workItem from="1491470808763" duration="5932000" />
-      <workItem from="1491478579281" duration="1326000" />
+      <workItem from="1491478579281" duration="3433000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="246305000" />
+    <option name="totallyTimeSpent" value="248412000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -811,7 +811,7 @@
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
-          <caret line="33" column="19" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="22" />
+          <caret line="33" column="19" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -826,8 +826,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/cors-whitelist.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="28" lean-forward="false" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+        <state relative-caret-position="330">
+          <caret line="22" column="29" lean-forward="false" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
           <folding />
         </state>
       </provider>
