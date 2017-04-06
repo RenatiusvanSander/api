@@ -18,7 +18,7 @@ var users = require('./routes/users');
 var app = express();
 
 // --------- cors whitelist
-//var corsOptions = require('./app/config/cors-options');
+var corsOptions = require('./app/config/cors-options');
 // ---------- end cors whitelist
 
 var dbConnection;
@@ -29,8 +29,8 @@ app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-//app.use(cors(corsOptions));
-app.use(cors());
+app.use(cors(corsOptions));
+//app.use(cors());
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
