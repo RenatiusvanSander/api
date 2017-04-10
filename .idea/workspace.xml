@@ -27,8 +27,8 @@
       <file leaf-file-name="cors-whitelist.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/config/cors-whitelist.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="25" column="29" lean-forward="false" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
+            <state relative-caret-position="319">
+              <caret line="28" column="24" lean-forward="true" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -196,6 +196,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -224,8 +226,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -405,12 +405,13 @@
       <workItem from="1491468903549" duration="1469000" />
       <workItem from="1491470808763" duration="5932000" />
       <workItem from="1491478579281" duration="4861000" />
-      <workItem from="1491809012420" duration="632000" />
+      <workItem from="1491809012420" duration="735000" />
+      <workItem from="1491824912841" duration="86000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="250472000" />
+    <option name="totallyTimeSpent" value="250661000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -827,8 +828,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/cors-whitelist.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="25" column="29" lean-forward="false" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
+        <state relative-caret-position="319">
+          <caret line="28" column="24" lean-forward="true" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
           <folding />
         </state>
       </provider>
