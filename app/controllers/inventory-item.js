@@ -1,13 +1,52 @@
+/**
+ * Provides more features for the widget module...
+ *
+ * @module routes-inventoryItemController
+ * @main routes
+ */
+/**
+ * A required attribute
+ * that is required for proper
+ * use, module will likely fail
+ * if this is not provided.
+ *
+ * @attribute expressValidator
+ * @type {Object} expressValidator validates inputs for the functions
+ * @required
+ */
 var expressValidator = require('express-validator');
+/**
+ * A class provides an ORM for the inventory-item, which is mapped to database
+ * as a table and stores the entries for inventory-items.
+ *
+ * @class InventoryItemModel
+ * @constructor
+ * @required
+ */
 var InventoryItemModel = require('../models/inventory-item');
 
-
+/**
+ * Return the Api Uptime to the requester.
+ *
+ * @method getApiUptime
+ * @param {Object} req contains the request
+ * @param {Object} res contains response methods to answer requests
+ * @return {Object} send the uptime of api to the request
+ */
 // send response if at root is requested
 var getApiUptime = function (req, res) {
   res.send('The API is up for ' + process.uptime() + ' seconds. It is awesome ;-) !');
   return false;
 };
 
+/**
+ * Return an serialized JSON. It contains the requested inventory-item.
+ *
+ * @method getInventoryItems
+ * @param {Object} req contains the request
+ * @param {Object} res contains response methods to answer requests
+ * @return {Object} send an inventory item serialized as JSON back to requester
+ */
 // get Inventory Items from DB
 var getInventoryItems = function (req, res) {
   //return all inventory items
@@ -35,8 +74,18 @@ var getInventoryItems = function (req, res) {
     });
 };
 
+/**
+ * Return an serialized JSON. It contains the requested inventory-item
+ * by a scanned barcode from BarcdeScan App.
+ *
+ * @method getScannedInventoryItems
+ * @param {Object} req contains the request
+ * @param {Object} res contains response methods to answer requests
+ * @param {Object} next jumps to the next method
+ * @return {Object} send an inventory item serialized as JSON back to requester
+ */
+// gets a barcode and return data about an inventory-item
 var getScannedInventoryItems = function (req, res, next) {
-  //return all inventory items
   var item_barcode = req.query.barcode; // inputted barcode
 
   // prepared query
@@ -69,10 +118,21 @@ var getScannedInventoryItems = function (req, res, next) {
     });
 };
 
+/**
+ * Return an serialized JSON. It contains the requested inventory-item.
+ *
+ * @method getInventoryItems
+ * @param {Object} req contains the request
+ * @param {Object} res contains response methods to answer requests
+ * @param {Object} next jumps to global error handler or to next method
+ * @return {Object} send an inventory item serialized as JSON back to requester
+ */
 // borrows Inventory-Items via BarcodeApp
 var getBorrowInventoryItem = function (req, res, next) {
   // borrow Inventory-Items here
+  // check if it is not a numeric barcode
   if(isNaN(req.query.barcode)) {
+    // response with an Not Found and include validation error
     res.status(404).send('There have been validation errors!');
   }
 
@@ -98,6 +158,16 @@ var getBorrowInventoryItem = function (req, res, next) {
 
 };
 
+/**
+ * validates input and throws error object or goes to next method.
+ *
+ * @method validateInsertInventoryItems
+ * @param {Object} req contains the request
+ * @param {Object} res contains response methods to answer requests
+ * @param {Object} next jumps to global error handler or to next method
+ * @return {Object} throws an error object to global error handler or jumps
+ * to next method
+ */
 var validateInsertInventoryItems = function (req, res, next) {
   req.check('itemname', '').notEmpty().isAlpha('de-DE');
   req.check('barcode', '').notEmpty().isInt();
@@ -112,6 +182,16 @@ var validateInsertInventoryItems = function (req, res, next) {
     .catch(next());
 };
 
+/**
+ * Return an serialized JSON. It contains the requested inventory-item.
+ *
+ * @method validateDeleteInventoryItems
+ * @param {Object} req contains the request
+ * @param {Object} res contains response methods to answer requests
+ * @param {Object} next jumps to global error handler or to next method
+ * @return {Object} throws an error object to global error handler or jumps
+ * to next method
+ */
 var validateDeleteInventoryItems = function(req, res, next) {
   req.checkParams('inventoryNo').notEmpty().isInt();
   req.getValidationResult()
@@ -122,6 +202,16 @@ var validateDeleteInventoryItems = function(req, res, next) {
     .catch(next());
 };
 
+/**
+ * Returns an inventory-item in JSON to requester.
+ *
+ * @method getReturnInventoryItem
+ * @param {Object} req contains the request
+ * @param {Object} res contains response methods to answer requests
+ * @param {Object} next jumps to global error handler or to next method
+ * @return {Object} throws an error object to global error handler or jumps
+ * to next method
+ */
 // return borrowed Inventory-Items
 var getReturnInventoryItem = function (req, res, next) {
   // returns borrowed items
@@ -154,6 +244,16 @@ var getReturnInventoryItem = function (req, res, next) {
     });
 };
 
+/**
+ * create an inventory-item by request
+ *
+ * @method postInventoryItems
+ * @param {Object} req contains the request
+ * @param {Object} res contains response methods to answer requests
+ * @param {Object} next jumps to global error handler or to next method
+ * @return {Object} throws an error object to global error handler or jumps
+ * to next method
+ */
 // create new inventory items
 var postInventoryItems = function (req, res, next) {
   // validate the request
@@ -195,6 +295,16 @@ var postInventoryItems = function (req, res, next) {
 
 };
 
+/**
+ * deletes an inventory-item by update itemStatus to deleted.
+ *
+ * @method deleteInventoryItems
+ * @param {Object} req contains the request
+ * @param {Object} res contains response methods to answer requests
+ * @param {Object} next jumps to global error handler or to next method
+ * @return {Object} throws an error object to global error handler or jumps
+ * to next method
+ */
 // delete an InventoryItem
 var deleteInventoryItems = function (req, res, next) {
   if(isNaN(req.params.inventoryNo)) {
@@ -231,6 +341,16 @@ var deleteInventoryItems = function (req, res, next) {
     });
 };
 
+/**
+ * deletes an inventory-item by update itemStatus to deleted.
+ *
+ * @method deleteInventoryItems
+ * @param {Object} req contains the request
+ * @param {Object} res contains response methods to answer requests
+ * @param {Object} next jumps to global error handler or to next method
+ * @return {Object} throws an error object to global error handler or jumps
+ * to next method
+ */
 var validateBarcodeRequest = function (req, res, next) {
   req.checkQuery('barcode', 'Invalid Barcode').isNumeric(); // valid Number and not empty
   req.getValidationResult()

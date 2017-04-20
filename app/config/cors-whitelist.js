@@ -1,6 +1,14 @@
 /**
  * Created by remy on 13/03/17.
  */
+/**
+ * store thes whitelist - allows only IP-addresses
+ * in this list and filters everything out, which is not allowed
+ *
+ * @module cors
+ * @submodule cors-whitelist
+ * @required
+ */
 module.exports = [
   'http://100.127.254.98:8000',
   'http://localhost:80',

@@ -1,8 +1,47 @@
+/**
+ * Config stores every vary for the InventoryItemModel calss
+ *
+ * @attribute config
+ * @readOnly
+ * @default true
+ * @type String
+ */
 var config = require('../config/config.json');
+/**
+ * Sequelize it is an ORM-Object. It writes the changes on the XML-Models
+ * to the database
+ *
+ * @attribute Sequelize
+ * @readOnly
+ * @default true
+ * @type Object
+ */
 var Sequelize = require('sequelize');
-
+/**
+ * is a sequelize ORM-Object
+ *
+ * @attribute sequelize
+ * @default true
+ * @type Object
+ */
 var sequelize = new Sequelize(config.database, config.username, config.password, config.options);
+/**
+ * is an error object and stores error message
+ *
+ * @attribute error
+ * @default false
+ * @type Object
+ */
 var error; // error message
+/**
+ * is an instance of the inventoryItemModel Object
+ * here are done the operations on the Object Related Mapping
+ * and synchronized to database
+ *
+ * @attribute inventory_items
+ * @default true
+ * @type Object
+ */
 var inventory_items; // model of table inventory_item
 
 // ensure proper model
