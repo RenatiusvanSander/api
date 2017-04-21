@@ -123,7 +123,7 @@ var swaggerOptions = {
   // import swaggerDefinitions
   swaggerDefinition: swaggerDefinition,
   // path to the API docs
-  apis: ['./app/conifg/routes.js'],
+  apis: ['./public/api-docs/*.js'],
 };
 
 var swaggerSpec = swaggerJSDoc(swaggerOptions);
