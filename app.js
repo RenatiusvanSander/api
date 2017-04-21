@@ -108,22 +108,36 @@ var swaggerJSDoc = require('swagger-jsdoc');
 var swagger = require('swagger-node-express');
 
 // swagger definition
+/*
 var swaggerDefinition = {
   info: {
     title: 'inventory-API',
     version: '1.0.0',
-    description: 'Demonstrating what the api contains',
+    //description: 'Demonstrating what the api contains',
   },
   host: 'localhost:3000',
   basePath: '/',
 };
+*/
 
 // options for the swagger docs
+/*
 var swaggerOptions = {
   // import swaggerDefinitions
   swaggerDefinition: swaggerDefinition,
   // path to the API docs
   apis: ['./public/api-docs/*.js'],
+};
+*/
+var swaggerOptions = {
+  swaggerDefinition:
+    {
+    info: {
+      title: 'Root', // Title (required)
+      version: '1.0.0', // Version (required)
+    },
+  },
+  apis: ['./public/api-docs/*.js'], // Path to the API docs
 };
 
 var swaggerSpec = swaggerJSDoc(swaggerOptions);
