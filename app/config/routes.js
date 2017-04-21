@@ -10,7 +10,7 @@
  * @required
  */
 var inventoryItemController = require('../controllers/inventory-item.js');
-var swaggerJSDoc = require('swagger-jsdoc');
+/*var swaggerJSDoc = require('swagger-jsdoc');
 
 
 // swagger definition
@@ -32,20 +32,22 @@ var swaggerOptions = {
   apis: ['./.../public/api-docs/*.js'],
 };
 
-var swaggerSpec = swaggerJSDoc(swaggerOptions);
+var swaggerSpec = swaggerJSDoc(swaggerOptions);*/
 
 // exports to app.js
 module.exports = function (app) {
   // serve swagger
+  /*
   app.get('/swagger.json', function(req, res) {
     res.setHeader('Content-Type', 'application/json');
     res.send(swaggerSpec);
   });
+  */
 
 /****************Swagger definitions******************************************/
 /**
   * @swagger
-  * definitions:
+  * definition:
   *   InventoryItem:
   *          type: object
   *      required:
