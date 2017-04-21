@@ -103,6 +103,31 @@ var expressValidator = require('express-validator');
  * @required
  */
 var cors = require('cors');
+var url = require('url');
+var swaggerJSDoc = require('swagger-jsdoc');
+var swagger = require('swagger-node-express');
+
+// swagger definition
+var swaggerDefinition = {
+  info: {
+    title: 'inventory-API',
+    version: '1.0.0',
+    description: 'Demonstrating what the api contains',
+  },
+  host: 'localhost:3000',
+  basePath: '/',
+};
+
+// options for the swagger docs
+var swaggerOptions = {
+  // import swaggerDefinitions
+  swaggerDefinition: swaggerDefinition,
+  // path to the API docs
+  apis: ['./app/conifg/routes.js'],
+};
+
+var swaggerSpec = swaggerJSDoc(swaggerOptions);
+
 
 /**
  * A required attribute
@@ -143,6 +168,8 @@ var users = require('./routes/users');
  * @required
  */
 var app = express();
+
+var subPath = express();
 
 /**
  * A required attribute
@@ -241,6 +268,7 @@ app.use(cookieParser());
  * @required
  */
 app.use(express.static(path.join(__dirname, 'public')));
+app.use("/",subPath);
 
 /**
  * A required attribute
@@ -256,6 +284,9 @@ var routes = require('./app/config/routes.js')(app);
 
 //app.use('/', index);
 //app.use('/users', users);
+
+//for documentation outside
+//swagger.setAppHandler(app);
 
 /**
  * Fired when global an error occurs...
