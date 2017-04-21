@@ -29,7 +29,7 @@ var swaggerOptions = {
   // import swaggerDefinitions
   swaggerDefinition: swaggerDefinition,
   // path to the API docs
-  apis: ['./routes/*.js'],
+  apis: ['./.../public/api-docs/*.js'],
 };
 
 var swaggerSpec = swaggerJSDoc(swaggerOptions);
