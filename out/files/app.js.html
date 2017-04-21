@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>app.js</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="../assets/css/logo.png" title="" width="117" height="52"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: </em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/app.html">app</a></li>
+                                <li><a href="../classes/connectSequelize.html">connectSequelize</a></li>
+                                <li><a href="../classes/function.html">function</a></li>
+                                <li><a href="../classes/InventoryItemModel.html">InventoryItemModel</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/cors.html">cors</a></li>
+                                <li><a href="../modules/cors-whitelist.html">cors-whitelist</a></li>
+                                <li><a href="../modules/routes.html">routes</a></li>
+                                <li><a href="../modules/routes-inventoryItemController.html">routes-inventoryItemController</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: app.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/**
+ * The inventory-api provides several web-adresses for different tasks like borrow, return, scan, insert and hands
+ * out a list of inventory-items.
+ * @class app
+ * @static
+ */
+/**
+ * A required attribute
+ * that is required for proper
+ * use, module will likely fail
+ * if this is not provided.
+ *
+ * @attribute express
+ * @type {String} express is a layer for several more functions based on NodeJS
+ * @required
+ */
+var express = require(&#x27;express&#x27;);
+/**
+ * A required attribute
+ * that is required for proper
+ * use, module will likely fail
+ * if this is not provided.
+ *
+ * @attribute path
+ * @type {String} path to the directories in nodejs
+ * @required
+ */
+var path = require(&#x27;path&#x27;);
+/**
+ * A required attribute
+ * that is required for proper
+ * use, module will likely fail
+ * if this is not provided.
+ *
+ * @attribute favicon
+ * @type {String} favicon for the webserver
+ * @required
+ */
+var favicon = require(&#x27;serve-favicon&#x27;);
+/**
+ * A required attribute
+ * that is required for proper
+ * use, module will likely fail
+ * if this is not provided.
+ *
+ * @attribute logger
+ * @type {String} logger to log everything
+ * @required
+ */
+var logger = require(&#x27;morgan&#x27;);
+/**
+ * A required attribute
+ * that is required for proper
+ * use, module will likely fail
+ * if this is not provided.
+ *
+ * @attribute cookieParser
+ * @type {String} cookieParser understands and parses cookies
+ * @required
+ */
+var cookieParser = require(&#x27;cookie-parser&#x27;);
+/**
+ * A required attribute
+ * that is required for proper
+ * use, module will likely fail
+ * if this is not provided.
+ *
+ * @attribute bodyParser
+ * @type {String} bodyParser understands HTTP-bodies
+ * @required
+ */
+var bodyParser = require(&#x27;body-parser&#x27;);
+/**
+ * A required attribute
+ * that is required for proper
+ * use, module will likely fail
+ * if this is not provided.
+ *
+ * @attribute Sequelize
+ * @type {String} Sequelize managesour model and transports them to database
+ * @required
+ */
+var Sequelize = require(&#x27;sequelize&#x27;);
+/**
+ * A required attribute
+ * that is required for proper
+ * use, module will likely fail
+ * if this is not provided.
+ *
+ * @attribute expressValidator
+ * @type {String} expressValidator validates every sent information from post, get, delete
+ * @required
+ */
+var expressValidator = require(&#x27;express-validator&#x27;);
+/**
+ * A required attribute
+ * that is required for proper
+ * use, module will likely fail
+ * if this is not provided.
+ *
+ * @attribute cors
+ * @type {String} cors supports javascript headers and provides a whitelist
+ * @required
+ */
+var cors = require(&#x27;cors&#x27;);
+
+/**
+ * A required attribute
+ * that is required for proper
+ * use, module will likely fail
+ * if this is not provided.
+ *
+ * @attribute InventoryItemModel
+ * @type {Class} InventoryItemModel stores the database model
+ * @required
+ */
+// InventoryItemModel and config are defined
+var InventoryItemModel = require(&#x27;./app/models/inventory-item.js&#x27;);
+/**
+ * stores a configuration for the app like databse connection
+ *
+ * @attribute config
+ * @readOnly
+ * @default true
+ * @type json
+ */
+var config = require(&#x27;./app/config/config.json&#x27;);
+
+/*
+ * do not needed
+var index = require(&#x27;./routes/index&#x27;);
+var users = require(&#x27;./routes/users&#x27;);
+*/
+
+/**
+ * A required attribute
+ * that is required for proper
+ * use, module will likely fail
+ * if this is not provided.
+ *
+ * @attribute app
+ * @type {Object} app is an express object that has every method for the app
+ * @required
+ */
+var app = express();
+
+/**
+ * A required attribute
+ * that is required for proper
+ * use, module will likely fail
+ * if this is not provided.
+ *
+ * @attribute corsOptions
+ * @type {String} corsOption configures the cors
+ * @required
+ */
+// --------- cors whitelist
+var corsOptions = require(&#x27;./app/config/cors-options&#x27;);
+// ---------- end cors whitelist
+
+/**
+ * A required attribute
+ * that is required for proper
+ * use, module will likely fail
+ * if this is not provided.
+ *
+ * @attribute dbConnection
+ * @type {Object} dbConnection has an database connection
+ * @required
+ */
+var dbConnection;
+
+/**
+ * Sets the views for browsers and the view generator like jade
+ *
+ * @method set
+ * @return {Null} Copy of ...
+ */
+// view engine setup
+app.set(&#x27;views&#x27;, path.join(__dirname, &#x27;views&#x27;));
+app.set(&#x27;view engine&#x27;, &#x27;jade&#x27;);
+
+// uncomment after placing your favicon in /public
+//app.use(favicon(path.join(__dirname, &#x27;public&#x27;, &#x27;favicon.ico&#x27;)));
+/**
+ * use activates several modules like cors, logger, bodyParser,
+ * express-validator, cookieParser and static shown directories
+ * to outside.
+ *
+ * @method app.use
+ * @param {Object} cors and has vary corsOption
+ * @required
+ */
+app.use(cors(corsOptions));
+/**
+ * sets logger setup and start it
+ *
+ * @method app.use
+ * @param {Object} logger and setting are dev
+ * @required
+ */
+app.use(logger(&#x27;dev&#x27;));
+/**
+ * use activates bodyParser.json() method
+ *
+ * @method app.use
+ * @param {Object} bodyParser.json() and setting are dev
+ * @required
+ */
+app.use(bodyParser.json());
+/**
+ * use activates bodyParser.urlencoded({extended: false}) method
+ *
+ * @method app.use
+ * @param {Object} bodyParser.urlencoded({extended: false}) and settings for
+ * encoding
+ * @required
+ */
+app.use(bodyParser.urlencoded({extended: false}));
+/**
+ * use activates expressValidator for HTTP-Body validation
+ *
+ * @method app.use
+ * @param {Object} expressValidator starts
+ * @required
+ */
+app.use(expressValidator());
+/**
+ * use activates cookieParser for HTTP-Body validation
+ *
+ * @method app.use
+ * @param {Object} cookieParser starts
+ * @required
+ */
+app.use(cookieParser());
+/**
+ * use activates static and viewable folders like public
+ *
+ * @method app.use
+ * @param {Object} express.static activate a public folder
+ * @required
+ */
+app.use(express.static(path.join(__dirname, &#x27;public&#x27;)));
+
+/**
+ * A required attribute
+ * that is required for proper
+ * use, module will likely fail
+ * if this is not provided.
+ *
+ * @attribute routes
+ * @type {Object} routes reacts on event triggered http-request and answers them
+ * @required
+ */
+var routes = require(&#x27;./app/config/routes.js&#x27;)(app);
+
+//app.use(&#x27;/&#x27;, index);
+//app.use(&#x27;/users&#x27;, users);
+
+/**
+ * Fired when global an error occurs...
+ *
+ * @method app.use
+ * @return {Object} error object
+ * @event error
+ * @param {String} err Not Found HTTP-StatusCode 404
+ * @required
+ */
+// check this error handler for need
+// catch 404 and forward to error handler
+app.use(function (req, res, next) {
+  var err = new Error(&#x27;Not Found&#x27;);
+  err.status = 404;
+  next(err);
+});
+
+/**
+ * establishes database connection and returns an object of connection
+ *
+ * @class connectSequelize
+ * @constructor
+ * @return {Object} sequelize object of database connection
+ * @required
+ */
+// database conncetion is handled here
+function connectSequelize() {
+  // connect to database
+
+  // begin connect
+  try {
+    var sequelize = new Sequelize(config.database, config.username, config.password, config.options);
+  }
+  catch (err) {
+    // error handler
+    console.log(err);
+  }
+
+  /* second way
+   var uri = dialect + &#x27;://&#x27; + un + &#x27;:&#x27; + pw + &#x27;@&#x27; + host + &#x27;:&#x27; + port + &#x27;/&#x27;  + db;
+   var sequelize = new Sequelize(uri);
+   */
+
+  // try connection
+  return sequelize
+    .authenticate()
+    .then(function () {
+      return sequelize;
+    })
+    .then(function (result) {
+      dbConnection = result;
+      return dbConnection;
+    })
+    .catch(function (err) {
+      // handle connection error
+      if (err.name.contains(&#x27;Sequelize&#x27;)) {
+        // log help message
+        console.log(&#x27;Please, check DNS, firewall, appArmor and mySQL&#x27;);
+        return false;
+      }
+    });
+}
+
+/**
+ * Fired when global an error occurs...
+ *
+ * @method app.use
+ * @return {Object} error object
+ * @event error
+ * @param {String} err Not Found HTTP-StatusCode 404
+ * @param {Object} req carries the http-request as Object
+ * @param {Object} res carries the response object
+ * @param {Object} next jumps to next method or to the error handler
+ * @required
+ */
+// error handler
+app.use(function (err, req, res, next) {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.app.get(&#x27;env&#x27;) === &#x27;development&#x27; ? err : {};
+
+  if (err.message == &quot;Validation failed&quot;) {
+    err.status = 400;
+  }
+  // render the error page
+  res.status(err.status || 500);
+  res.render(&#x27;error&#x27;);
+});
+
+/**
+ * A required attribute
+ * that is required for proper
+ * use, module will likely fail
+ * if this is not provided.
+ *
+ * @attribute module.exports
+ * @required
+ */
+module.exports = app;
+
+/**
+ * on succes starts the app.js and on error it stops
+ *
+ * @method connectSequelize().then()
+ * @return {Object} Copy of Sequelize Object
+ * @required
+ */
+connectSequelize()
+  .then(function (result) {
+    // start server and bind to port 3000
+    app.listen(3000, function () {
+      console.log(&#x27;REST API listens on port 3000!&#x27;);
+    });
+  })
+  .catch(function (err) {
+    if (err.name == &#x27;TypeError&#x27;) {
+      console.log(&#x27;Connection error: &#x27; + err);
+    }
+  });
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

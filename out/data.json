@@ -1,0 +1,1200 @@
+{
+    "project": {},
+    "files": {
+        "app/config/cors-options.js": {
+            "name": "app/config/cors-options.js",
+            "modules": {
+                "cors": 1,
+                "cors-whitelist": 1
+            },
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "app/config/cors-whitelist.js": {
+            "name": "app/config/cors-whitelist.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "app/config/routes.js": {
+            "name": "app/config/routes.js",
+            "modules": {
+                "routes": 1,
+                "routes-inventoryItemController": 1
+            },
+            "classes": {
+                "function": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "app/controllers/inventory-item.js": {
+            "name": "app/controllers/inventory-item.js",
+            "modules": {},
+            "classes": {
+                "InventoryItemModel": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "app/models/inventory-item.js": {
+            "name": "app/models/inventory-item.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "app.js": {
+            "name": "app.js",
+            "modules": {},
+            "classes": {
+                "app": 1,
+                "connectSequelize": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "ecosystem.config.js": {
+            "name": "ecosystem.config.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {
+        "cors": {
+            "name": "cors",
+            "submodules": {
+                "cors-whitelist": 1
+            },
+            "elements": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {},
+            "file": "app/config/cors-options.js",
+            "line": 4,
+            "description": "Provides the cors with options",
+            "tag": "main",
+            "itemtype": "main"
+        },
+        "cors-whitelist": {
+            "name": "cors-whitelist",
+            "submodules": {},
+            "elements": {},
+            "classes": {},
+            "fors": {},
+            "is_submodule": 1,
+            "namespaces": {},
+            "module": "cors",
+            "namespace": "",
+            "file": "app/config/cors-options.js",
+            "line": 4,
+            "description": "Provides the cors with options",
+            "tag": "main",
+            "itemtype": "main",
+            "required": 1
+        },
+        "routes": {
+            "name": "routes",
+            "submodules": {
+                "routes-inventoryItemController": 1
+            },
+            "elements": {},
+            "classes": {
+                "function": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "file": "app/config/routes.js",
+            "line": 16,
+            "description": "Provides more features for the widget module...",
+            "tag": "main",
+            "itemtype": "main"
+        },
+        "routes-inventoryItemController": {
+            "name": "routes-inventoryItemController",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "function": 1,
+                "InventoryItemModel": 1,
+                "app": 1,
+                "connectSequelize": 1
+            },
+            "fors": {},
+            "is_submodule": 1,
+            "namespaces": {},
+            "module": "routes",
+            "namespace": "",
+            "file": "app.js",
+            "line": 277,
+            "description": "Provides more features for the widget module...",
+            "tag": "main",
+            "itemtype": "main",
+            "required": 1
+        }
+    },
+    "classes": {
+        "function": {
+            "name": "function",
+            "shortname": "function",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "routes",
+            "submodule": "routes-inventoryItemController",
+            "namespace": "",
+            "file": "app/config/routes.js",
+            "line": 16,
+            "description": "export class and the methods",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "origin",
+                    "description": "is a list String",
+                    "type": "Object"
+                },
+                {
+                    "name": "callback",
+                    "description": "does hand over the String to cors module",
+                    "type": "Object"
+                }
+            ],
+            "itemtype": "event",
+            "return": {
+                "description": "only an error object if that happens ...",
+                "type": "Object"
+            },
+            "required": 1
+        },
+        "InventoryItemModel": {
+            "name": "InventoryItemModel",
+            "shortname": "InventoryItemModel",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "routes-inventoryItemController",
+            "namespace": "",
+            "file": "app/controllers/inventory-item.js",
+            "line": 18,
+            "description": "A class provides an ORM for the inventory-item, which is mapped to database\nas a table and stores the entries for inventory-items.",
+            "is_constructor": 1,
+            "required": 1
+        },
+        "app": {
+            "name": "app",
+            "shortname": "app",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "routes-inventoryItemController",
+            "namespace": "",
+            "file": "app.js",
+            "line": 1,
+            "description": "The inventory-api provides several web-adresses for different tasks like borrow, return, scan, insert and hands\nout a list of inventory-items.",
+            "static": 1
+        },
+        "connectSequelize": {
+            "name": "connectSequelize",
+            "shortname": "connectSequelize",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "routes-inventoryItemController",
+            "namespace": "",
+            "file": "app.js",
+            "line": 277,
+            "description": "establishes database connection and returns an object of connection",
+            "is_constructor": 1,
+            "return": {
+                "description": "sequelize object of database connection",
+                "type": "Object"
+            },
+            "required": 1
+        }
+    },
+    "elements": {},
+    "classitems": [
+        {
+            "file": "app/config/cors-options.js",
+            "line": 1,
+            "description": "Created by remy on 13/03/17.",
+            "class": "function"
+        },
+        {
+            "file": "app/config/cors-options.js",
+            "line": 13,
+            "description": "Indicates whether this Widget\nhas been rendered...",
+            "itemtype": "attribute",
+            "name": "apiWhitelist",
+            "default": "true",
+            "type": "Object",
+            "class": "function",
+            "module": "cors",
+            "submodule": "cors-whitelist"
+        },
+        {
+            "file": "app/config/cors-whitelist.js",
+            "line": 1,
+            "description": "Created by remy on 13/03/17.",
+            "class": "function",
+            "module": "cors"
+        },
+        {
+            "file": "app/config/routes.js",
+            "line": 27,
+            "description": "Returns the api uptime",
+            "itemtype": "event",
+            "name": "receives request",
+            "params": [
+                {
+                    "name": "path",
+                    "description": "stores the webaddress path",
+                    "type": "String"
+                },
+                {
+                    "name": "getInventoryItems",
+                    "description": "",
+                    "type": "Method"
+                }
+            ],
+            "required": 1,
+            "class": "function",
+            "module": "routes",
+            "submodule": "routes-inventoryItemController"
+        },
+        {
+            "file": "app/config/routes.js",
+            "line": 37,
+            "description": "Returns a list of inventory-items for webaddress\n/api/inventory-items/",
+            "itemtype": "event",
+            "name": "receives request",
+            "params": [
+                {
+                    "name": "path",
+                    "description": "stores the webaddress path",
+                    "type": "String"
+                },
+                {
+                    "name": "getBorrowInventoryItem",
+                    "description": "",
+                    "type": "Method"
+                }
+            ],
+            "required": 1,
+            "class": "function",
+            "module": "routes",
+            "submodule": "routes-inventoryItemController"
+        },
+        {
+            "file": "app/config/routes.js",
+            "line": 48,
+            "description": "borrow a scanned-item of inventory-items for webaddress\n/api/inventory-items/borrow-items",
+            "itemtype": "event",
+            "name": "receives request",
+            "params": [
+                {
+                    "name": "path",
+                    "description": "stores the webaddress path",
+                    "type": "String"
+                },
+                {
+                    "name": "getBorrowInventoryItem",
+                    "description": "",
+                    "type": "Method"
+                }
+            ],
+            "required": 1,
+            "class": "function",
+            "module": "routes",
+            "submodule": "routes-inventoryItemController"
+        },
+        {
+            "file": "app/config/routes.js",
+            "line": 60,
+            "description": "returns an inventory-items to the pool, The webaddress\n/api/inventory-items/return-items",
+            "itemtype": "event",
+            "name": "receives request",
+            "params": [
+                {
+                    "name": "path",
+                    "description": "stores the webaddress path",
+                    "type": "String"
+                },
+                {
+                    "name": "validateBarcodeRequest",
+                    "description": "",
+                    "type": "Method"
+                },
+                {
+                    "name": "getReturnInventoryItem",
+                    "description": "",
+                    "type": "Method"
+                }
+            ],
+            "required": 1,
+            "class": "function",
+            "module": "routes",
+            "submodule": "routes-inventoryItemController"
+        },
+        {
+            "file": "app/config/routes.js",
+            "line": 74,
+            "description": "returns data of an inventory-item, The webaddress\n/api/inventory-items/scanned-item",
+            "itemtype": "event",
+            "name": "receives request",
+            "params": [
+                {
+                    "name": "path",
+                    "description": "stores the webaddress path",
+                    "type": "String"
+                },
+                {
+                    "name": "validateBarcodeRequest",
+                    "description": "",
+                    "type": "Method"
+                },
+                {
+                    "name": "getScannedInventoryItems",
+                    "description": "",
+                    "type": "Method"
+                }
+            ],
+            "required": 1,
+            "class": "function",
+            "module": "routes",
+            "submodule": "routes-inventoryItemController"
+        },
+        {
+            "file": "app/config/routes.js",
+            "line": 88,
+            "description": "insert an inventory-item by post on\n/api/inventory-items",
+            "itemtype": "event",
+            "name": "receives request",
+            "params": [
+                {
+                    "name": "path",
+                    "description": "/api/inventory-items",
+                    "type": "String"
+                },
+                {
+                    "name": "validateInsertInventoryItems",
+                    "description": "",
+                    "type": "Method"
+                },
+                {
+                    "name": "postInventoryItems",
+                    "description": "",
+                    "type": "Method"
+                }
+            ],
+            "required": 1,
+            "class": "function",
+            "module": "routes",
+            "submodule": "routes-inventoryItemController"
+        },
+        {
+            "file": "app/config/routes.js",
+            "line": 102,
+            "description": "on this address is an inventoryItem deleted.\n/api/inventory-items/:inventoryNo",
+            "itemtype": "event",
+            "name": "receives request",
+            "params": [
+                {
+                    "name": "path",
+                    "description": "/api/inventory-items/:inventoryNo",
+                    "type": "String"
+                },
+                {
+                    "name": "deleteInventoryItems",
+                    "description": "",
+                    "type": "Method"
+                }
+            ],
+            "required": 1,
+            "class": "function",
+            "module": "routes",
+            "submodule": "routes-inventoryItemController"
+        },
+        {
+            "file": "app/controllers/inventory-item.js",
+            "line": 7,
+            "description": "A required attribute\nthat is required for proper\nuse, module will likely fail\nif this is not provided.",
+            "itemtype": "attribute",
+            "name": "expressValidator",
+            "type": "{Object} expressValidator validates inputs for the functions",
+            "required": 1,
+            "class": "InventoryItemModel",
+            "module": "routes-inventoryItemController"
+        },
+        {
+            "file": "app/controllers/inventory-item.js",
+            "line": 28,
+            "description": "Return the Api Uptime to the requester.",
+            "itemtype": "method",
+            "name": "getApiUptime",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "contains the request",
+                    "type": "Object"
+                },
+                {
+                    "name": "res",
+                    "description": "contains response methods to answer requests",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "send the uptime of api to the request",
+                "type": "Object"
+            },
+            "class": "InventoryItemModel",
+            "module": "routes-inventoryItemController"
+        },
+        {
+            "file": "app/controllers/inventory-item.js",
+            "line": 42,
+            "description": "Return an serialized JSON. It contains the requested inventory-item.",
+            "itemtype": "method",
+            "name": "getInventoryItems",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "contains the request",
+                    "type": "Object"
+                },
+                {
+                    "name": "res",
+                    "description": "contains response methods to answer requests",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "send an inventory item serialized as JSON back to requester",
+                "type": "Object"
+            },
+            "class": "InventoryItemModel",
+            "module": "routes-inventoryItemController"
+        },
+        {
+            "file": "app/controllers/inventory-item.js",
+            "line": 77,
+            "description": "Return an serialized JSON. It contains the requested inventory-item\nby a scanned barcode from BarcdeScan App.",
+            "itemtype": "method",
+            "name": "getScannedInventoryItems",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "contains the request",
+                    "type": "Object"
+                },
+                {
+                    "name": "res",
+                    "description": "contains response methods to answer requests",
+                    "type": "Object"
+                },
+                {
+                    "name": "next",
+                    "description": "jumps to the next method",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "send an inventory item serialized as JSON back to requester",
+                "type": "Object"
+            },
+            "class": "InventoryItemModel",
+            "module": "routes-inventoryItemController"
+        },
+        {
+            "file": "app/controllers/inventory-item.js",
+            "line": 121,
+            "description": "Return an serialized JSON. It contains the requested inventory-item.",
+            "itemtype": "method",
+            "name": "getInventoryItems",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "contains the request",
+                    "type": "Object"
+                },
+                {
+                    "name": "res",
+                    "description": "contains response methods to answer requests",
+                    "type": "Object"
+                },
+                {
+                    "name": "next",
+                    "description": "jumps to global error handler or to next method",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "send an inventory item serialized as JSON back to requester",
+                "type": "Object"
+            },
+            "class": "InventoryItemModel",
+            "module": "routes-inventoryItemController"
+        },
+        {
+            "file": "app/controllers/inventory-item.js",
+            "line": 161,
+            "description": "validates input and throws error object or goes to next method.",
+            "itemtype": "method",
+            "name": "validateInsertInventoryItems",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "contains the request",
+                    "type": "Object"
+                },
+                {
+                    "name": "res",
+                    "description": "contains response methods to answer requests",
+                    "type": "Object"
+                },
+                {
+                    "name": "next",
+                    "description": "jumps to global error handler or to next method",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "throws an error object to global error handler or jumps\nto next method",
+                "type": "Object"
+            },
+            "class": "InventoryItemModel",
+            "module": "routes-inventoryItemController"
+        },
+        {
+            "file": "app/controllers/inventory-item.js",
+            "line": 185,
+            "description": "Return an serialized JSON. It contains the requested inventory-item.",
+            "itemtype": "method",
+            "name": "validateDeleteInventoryItems",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "contains the request",
+                    "type": "Object"
+                },
+                {
+                    "name": "res",
+                    "description": "contains response methods to answer requests",
+                    "type": "Object"
+                },
+                {
+                    "name": "next",
+                    "description": "jumps to global error handler or to next method",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "throws an error object to global error handler or jumps\nto next method",
+                "type": "Object"
+            },
+            "class": "InventoryItemModel",
+            "module": "routes-inventoryItemController"
+        },
+        {
+            "file": "app/controllers/inventory-item.js",
+            "line": 205,
+            "description": "Returns an inventory-item in JSON to requester.",
+            "itemtype": "method",
+            "name": "getReturnInventoryItem",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "contains the request",
+                    "type": "Object"
+                },
+                {
+                    "name": "res",
+                    "description": "contains response methods to answer requests",
+                    "type": "Object"
+                },
+                {
+                    "name": "next",
+                    "description": "jumps to global error handler or to next method",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "throws an error object to global error handler or jumps\nto next method",
+                "type": "Object"
+            },
+            "class": "InventoryItemModel",
+            "module": "routes-inventoryItemController"
+        },
+        {
+            "file": "app/controllers/inventory-item.js",
+            "line": 247,
+            "description": "create an inventory-item by request",
+            "itemtype": "method",
+            "name": "postInventoryItems",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "contains the request",
+                    "type": "Object"
+                },
+                {
+                    "name": "res",
+                    "description": "contains response methods to answer requests",
+                    "type": "Object"
+                },
+                {
+                    "name": "next",
+                    "description": "jumps to global error handler or to next method",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "throws an error object to global error handler or jumps\nto next method",
+                "type": "Object"
+            },
+            "class": "InventoryItemModel",
+            "module": "routes-inventoryItemController"
+        },
+        {
+            "file": "app/controllers/inventory-item.js",
+            "line": 298,
+            "description": "deletes an inventory-item by update itemStatus to deleted.",
+            "itemtype": "method",
+            "name": "deleteInventoryItems",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "contains the request",
+                    "type": "Object"
+                },
+                {
+                    "name": "res",
+                    "description": "contains response methods to answer requests",
+                    "type": "Object"
+                },
+                {
+                    "name": "next",
+                    "description": "jumps to global error handler or to next method",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "throws an error object to global error handler or jumps\nto next method",
+                "type": "Object"
+            },
+            "class": "InventoryItemModel",
+            "module": "routes-inventoryItemController"
+        },
+        {
+            "file": "app/controllers/inventory-item.js",
+            "line": 344,
+            "description": "deletes an inventory-item by update itemStatus to deleted.",
+            "itemtype": "method",
+            "name": "deleteInventoryItems",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "contains the request",
+                    "type": "Object"
+                },
+                {
+                    "name": "res",
+                    "description": "contains response methods to answer requests",
+                    "type": "Object"
+                },
+                {
+                    "name": "next",
+                    "description": "jumps to global error handler or to next method",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "throws an error object to global error handler or jumps\nto next method",
+                "type": "Object"
+            },
+            "class": "InventoryItemModel",
+            "module": "routes-inventoryItemController"
+        },
+        {
+            "file": "app/models/inventory-item.js",
+            "line": 1,
+            "description": "Config stores every vary for the InventoryItemModel calss",
+            "itemtype": "attribute",
+            "name": "config",
+            "readonly": "",
+            "default": "true",
+            "type": "String",
+            "class": "app",
+            "module": "routes-inventoryItemController"
+        },
+        {
+            "file": "app/models/inventory-item.js",
+            "line": 10,
+            "description": "Sequelize it is an ORM-Object. It writes the changes on the XML-Models\nto the database",
+            "itemtype": "attribute",
+            "name": "Sequelize",
+            "readonly": "",
+            "default": "true",
+            "type": "Object",
+            "class": "app",
+            "module": "routes-inventoryItemController"
+        },
+        {
+            "file": "app/models/inventory-item.js",
+            "line": 20,
+            "description": "is a sequelize ORM-Object",
+            "itemtype": "attribute",
+            "name": "sequelize",
+            "default": "true",
+            "type": "Object",
+            "class": "app",
+            "module": "routes-inventoryItemController"
+        },
+        {
+            "file": "app/models/inventory-item.js",
+            "line": 28,
+            "description": "is an error object and stores error message",
+            "itemtype": "attribute",
+            "name": "error",
+            "default": "false",
+            "type": "Object",
+            "class": "app",
+            "module": "routes-inventoryItemController"
+        },
+        {
+            "file": "app/models/inventory-item.js",
+            "line": 36,
+            "description": "is an instance of the inventoryItemModel Object\nhere are done the operations on the Object Related Mapping\nand synchronized to database",
+            "itemtype": "attribute",
+            "name": "inventory_items",
+            "default": "true",
+            "type": "Object",
+            "class": "app",
+            "module": "routes-inventoryItemController"
+        },
+        {
+            "file": "app.js",
+            "line": 7,
+            "description": "A required attribute\nthat is required for proper\nuse, module will likely fail\nif this is not provided.",
+            "itemtype": "attribute",
+            "name": "express",
+            "type": "{String} express is a layer for several more functions based on NodeJS",
+            "required": 1,
+            "class": "app",
+            "module": "routes-inventoryItemController"
+        },
+        {
+            "file": "app.js",
+            "line": 18,
+            "description": "A required attribute\nthat is required for proper\nuse, module will likely fail\nif this is not provided.",
+            "itemtype": "attribute",
+            "name": "path",
+            "type": "{String} path to the directories in nodejs",
+            "required": 1,
+            "class": "app",
+            "module": "routes-inventoryItemController"
+        },
+        {
+            "file": "app.js",
+            "line": 29,
+            "description": "A required attribute\nthat is required for proper\nuse, module will likely fail\nif this is not provided.",
+            "itemtype": "attribute",
+            "name": "favicon",
+            "type": "{String} favicon for the webserver",
+            "required": 1,
+            "class": "app",
+            "module": "routes-inventoryItemController"
+        },
+        {
+            "file": "app.js",
+            "line": 40,
+            "description": "A required attribute\nthat is required for proper\nuse, module will likely fail\nif this is not provided.",
+            "itemtype": "attribute",
+            "name": "logger",
+            "type": "{String} logger to log everything",
+            "required": 1,
+            "class": "app",
+            "module": "routes-inventoryItemController"
+        },
+        {
+            "file": "app.js",
+            "line": 51,
+            "description": "A required attribute\nthat is required for proper\nuse, module will likely fail\nif this is not provided.",
+            "itemtype": "attribute",
+            "name": "cookieParser",
+            "type": "{String} cookieParser understands and parses cookies",
+            "required": 1,
+            "class": "app",
+            "module": "routes-inventoryItemController"
+        },
+        {
+            "file": "app.js",
+            "line": 62,
+            "description": "A required attribute\nthat is required for proper\nuse, module will likely fail\nif this is not provided.",
+            "itemtype": "attribute",
+            "name": "bodyParser",
+            "type": "{String} bodyParser understands HTTP-bodies",
+            "required": 1,
+            "class": "app",
+            "module": "routes-inventoryItemController"
+        },
+        {
+            "file": "app.js",
+            "line": 73,
+            "description": "A required attribute\nthat is required for proper\nuse, module will likely fail\nif this is not provided.",
+            "itemtype": "attribute",
+            "name": "Sequelize",
+            "type": "{String} Sequelize managesour model and transports them to database",
+            "required": 1,
+            "class": "app",
+            "module": "routes-inventoryItemController"
+        },
+        {
+            "file": "app.js",
+            "line": 84,
+            "description": "A required attribute\nthat is required for proper\nuse, module will likely fail\nif this is not provided.",
+            "itemtype": "attribute",
+            "name": "expressValidator",
+            "type": "{String} expressValidator validates every sent information from post, get, delete",
+            "required": 1,
+            "class": "app",
+            "module": "routes-inventoryItemController"
+        },
+        {
+            "file": "app.js",
+            "line": 95,
+            "description": "A required attribute\nthat is required for proper\nuse, module will likely fail\nif this is not provided.",
+            "itemtype": "attribute",
+            "name": "cors",
+            "type": "{String} cors supports javascript headers and provides a whitelist",
+            "required": 1,
+            "class": "app",
+            "module": "routes-inventoryItemController"
+        },
+        {
+            "file": "app.js",
+            "line": 107,
+            "description": "A required attribute\nthat is required for proper\nuse, module will likely fail\nif this is not provided.",
+            "itemtype": "attribute",
+            "name": "InventoryItemModel",
+            "type": "{Class} InventoryItemModel stores the database model",
+            "required": 1,
+            "class": "app",
+            "module": "routes-inventoryItemController"
+        },
+        {
+            "file": "app.js",
+            "line": 119,
+            "description": "stores a configuration for the app like databse connection",
+            "itemtype": "attribute",
+            "name": "config",
+            "readonly": "",
+            "default": "true",
+            "type": "json",
+            "class": "app",
+            "module": "routes-inventoryItemController"
+        },
+        {
+            "file": "app.js",
+            "line": 135,
+            "description": "A required attribute\nthat is required for proper\nuse, module will likely fail\nif this is not provided.",
+            "itemtype": "attribute",
+            "name": "app",
+            "type": "{Object} app is an express object that has every method for the app",
+            "required": 1,
+            "class": "app",
+            "module": "routes-inventoryItemController"
+        },
+        {
+            "file": "app.js",
+            "line": 147,
+            "description": "A required attribute\nthat is required for proper\nuse, module will likely fail\nif this is not provided.",
+            "itemtype": "attribute",
+            "name": "corsOptions",
+            "type": "{String} corsOption configures the cors",
+            "required": 1,
+            "class": "app",
+            "module": "routes-inventoryItemController"
+        },
+        {
+            "file": "app.js",
+            "line": 161,
+            "description": "A required attribute\nthat is required for proper\nuse, module will likely fail\nif this is not provided.",
+            "itemtype": "attribute",
+            "name": "dbConnection",
+            "type": "{Object} dbConnection has an database connection",
+            "required": 1,
+            "class": "app",
+            "module": "routes-inventoryItemController"
+        },
+        {
+            "file": "app.js",
+            "line": 173,
+            "description": "Sets the views for browsers and the view generator like jade",
+            "itemtype": "method",
+            "name": "set",
+            "return": {
+                "description": "Copy of ...",
+                "type": "Null"
+            },
+            "class": "app",
+            "module": "routes-inventoryItemController"
+        },
+        {
+            "file": "app.js",
+            "line": 185,
+            "description": "use activates several modules like cors, logger, bodyParser,\nexpress-validator, cookieParser and static shown directories\nto outside.",
+            "itemtype": "method",
+            "name": "app.use",
+            "params": [
+                {
+                    "name": "cors",
+                    "description": "and has vary corsOption",
+                    "type": "Object"
+                }
+            ],
+            "required": 1,
+            "class": "app",
+            "module": "routes-inventoryItemController"
+        },
+        {
+            "file": "app.js",
+            "line": 195,
+            "description": "sets logger setup and start it",
+            "itemtype": "method",
+            "name": "app.use",
+            "params": [
+                {
+                    "name": "logger",
+                    "description": "and setting are dev",
+                    "type": "Object"
+                }
+            ],
+            "required": 1,
+            "class": "app",
+            "module": "routes-inventoryItemController"
+        },
+        {
+            "file": "app.js",
+            "line": 203,
+            "description": "use activates bodyParser.json() method",
+            "itemtype": "method",
+            "name": "app.use",
+            "params": [
+                {
+                    "name": "bodyParser.json()",
+                    "description": "and setting are dev",
+                    "type": "Object"
+                }
+            ],
+            "required": 1,
+            "class": "app",
+            "module": "routes-inventoryItemController"
+        },
+        {
+            "file": "app.js",
+            "line": 211,
+            "description": "use activates bodyParser.urlencoded({extended: false}) method",
+            "itemtype": "method",
+            "name": "app.use",
+            "params": [
+                {
+                    "name": "bodyParser.urlencoded({extended:",
+                    "description": "false}) and settings for\nencoding",
+                    "type": "Object"
+                }
+            ],
+            "required": 1,
+            "class": "app",
+            "module": "routes-inventoryItemController"
+        },
+        {
+            "file": "app.js",
+            "line": 220,
+            "description": "use activates expressValidator for HTTP-Body validation",
+            "itemtype": "method",
+            "name": "app.use",
+            "params": [
+                {
+                    "name": "expressValidator",
+                    "description": "starts",
+                    "type": "Object"
+                }
+            ],
+            "required": 1,
+            "class": "app",
+            "module": "routes-inventoryItemController"
+        },
+        {
+            "file": "app.js",
+            "line": 228,
+            "description": "use activates cookieParser for HTTP-Body validation",
+            "itemtype": "method",
+            "name": "app.use",
+            "params": [
+                {
+                    "name": "cookieParser",
+                    "description": "starts",
+                    "type": "Object"
+                }
+            ],
+            "required": 1,
+            "class": "app",
+            "module": "routes-inventoryItemController"
+        },
+        {
+            "file": "app.js",
+            "line": 236,
+            "description": "use activates static and viewable folders like public",
+            "itemtype": "method",
+            "name": "app.use",
+            "params": [
+                {
+                    "name": "express.static",
+                    "description": "activate a public folder",
+                    "type": "Object"
+                }
+            ],
+            "required": 1,
+            "class": "app",
+            "module": "routes-inventoryItemController"
+        },
+        {
+            "file": "app.js",
+            "line": 245,
+            "description": "A required attribute\nthat is required for proper\nuse, module will likely fail\nif this is not provided.",
+            "itemtype": "attribute",
+            "name": "routes",
+            "type": "{Object} routes reacts on event triggered http-request and answers them",
+            "required": 1,
+            "class": "app",
+            "module": "routes-inventoryItemController"
+        },
+        {
+            "file": "app.js",
+            "line": 260,
+            "description": "Fired when global an error occurs...",
+            "itemtype": "event",
+            "name": "error",
+            "return": {
+                "description": "error object",
+                "type": "Object"
+            },
+            "params": [
+                {
+                    "name": "err",
+                    "description": "Not Found HTTP-StatusCode 404",
+                    "type": "String"
+                }
+            ],
+            "required": 1,
+            "class": "app",
+            "module": "routes-inventoryItemController"
+        },
+        {
+            "file": "app.js",
+            "line": 323,
+            "description": "Fired when global an error occurs...",
+            "itemtype": "event",
+            "name": "error",
+            "return": {
+                "description": "error object",
+                "type": "Object"
+            },
+            "params": [
+                {
+                    "name": "err",
+                    "description": "Not Found HTTP-StatusCode 404",
+                    "type": "String"
+                },
+                {
+                    "name": "req",
+                    "description": "carries the http-request as Object",
+                    "type": "Object"
+                },
+                {
+                    "name": "res",
+                    "description": "carries the response object",
+                    "type": "Object"
+                },
+                {
+                    "name": "next",
+                    "description": "jumps to next method or to the error handler",
+                    "type": "Object"
+                }
+            ],
+            "required": 1,
+            "class": "connectSequelize",
+            "module": "routes-inventoryItemController"
+        },
+        {
+            "file": "app.js",
+            "line": 349,
+            "description": "A required attribute\nthat is required for proper\nuse, module will likely fail\nif this is not provided.",
+            "itemtype": "attribute",
+            "name": "module.exports",
+            "required": 1,
+            "class": "connectSequelize",
+            "module": "routes-inventoryItemController"
+        },
+        {
+            "file": "app.js",
+            "line": 360,
+            "description": "on succes starts the app.js and on error it stops",
+            "itemtype": "method",
+            "name": "connectSequelize().then()",
+            "return": {
+                "description": "Copy of Sequelize Object",
+                "type": "Object"
+            },
+            "required": 1,
+            "class": "connectSequelize",
+            "module": "routes-inventoryItemController"
+        },
+        {
+            "file": "ecosystem.config.js",
+            "line": 2,
+            "description": "Application configuration section\nhttp://pm2.keymetrics.io/docs/usage/application-declaration/",
+            "class": "",
+            "module": "routes-inventoryItemController"
+        },
+        {
+            "file": "ecosystem.config.js",
+            "line": 21,
+            "description": "Deployment section\nhttp://pm2.keymetrics.io/docs/usage/deployment/",
+            "class": "",
+            "module": "routes-inventoryItemController"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "Missing item type\nCreated by remy on 13/03/17.",
+            "line": " app/config/cors-options.js:1"
+        },
+        {
+            "message": "Missing item type\nCreated by remy on 13/03/17.",
+            "line": " app/config/cors-whitelist.js:1"
+        },
+        {
+            "message": "Missing item type\nApplication configuration section\nhttp://pm2.keymetrics.io/docs/usage/application-declaration/",
+            "line": " ecosystem.config.js:2"
+        },
+        {
+            "message": "Missing item type\nDeployment section\nhttp://pm2.keymetrics.io/docs/usage/deployment/",
+            "line": " ecosystem.config.js:21"
+        }
+    ]
+}
