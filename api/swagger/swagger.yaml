@@ -11,3 +11,169 @@ consumes:
 produces:
   - application/json
 paths:
+  /:
+    get:
+      description: return api uptime
+      operationId: apiUpTime
+      produces:
+        - application/json
+        - application/xml
+        - text/xml
+        - text/html
+      responses:
+        200:
+          description: OK
+        404:
+         description: Not Found
+  /api/inventory-items/scanned-item:
+    get:
+      description: get to a scanned barcode the data of the inventory-item
+      operationId: scannedItem
+      parameters:
+        - name: barcode
+          in: query
+          description: a scanned barcode
+          required: true
+          type: string
+      produces:
+        - application/xml
+        - text/xml
+        - text/html
+      responses:
+        304:
+          description: Not Modified
+        200:
+          description: OK
+        404:
+          description: Not Found
+  /api/inventory-items/borrow-items:
+    get:
+      description: borrows inventory-items via the app
+      operationId: borrowItems
+      parameters:
+        - name: barcode
+          in: query
+          description: a scanned barcode
+          required: true
+          type: string
+        - name: borrower
+          in: query
+          required: true
+          type: string
+      produces:
+        - application/xml
+        - text/xml
+        - text/html
+        - application/json
+      responses:
+        304:
+          description: Not Modified
+        200:
+          description: OK
+        404:
+          description: Not Found
+  /api/inventory-items/return-items:
+    get:
+      description: return an inventory-item to pool
+      operationId: returnInventoryItem
+      parameters:
+        - name: barcode
+          in: query
+          description: a scanned barcode
+          required: true
+          type: string
+      produces:
+        - application/xml
+        - text/xml
+        - text/html
+        - application/json
+      responses:
+        304:
+          description: Not Modified
+        202:
+          description: Accepted
+        404:
+          description: Not Found
+  /api/inventory-items/{inventoryNo}:
+    delete:
+      description: delete an inventory-item by update
+      operationId: deleteInventoryItem
+      parameters:
+        - in: path
+          name: inventoryNo
+          type: string
+          required: true
+          description: inventory-number of an inventory-item.
+      produces:
+        - text/xml
+        - text/html
+        - application/json
+      responses:
+        200:
+          description: Accepted
+        404:
+          description: Not Found
+  /api/inventory-items/:
+    get:
+      description: returns a list of inventory-items
+      operationId: listInventoryItems
+      produces:
+        - application/xml
+        - text/xml
+        - text/html
+        - application/json
+      responses:
+        304:
+          description: Not Modified
+        200:
+          description: OK
+        404:
+          description: Not Found
+  /api/inventory-items:
+    post:
+      description: insert an inventoryItem
+      operationId: insertInventoryItem
+      produces:
+        - application/xml
+        - text/xml
+        - text/html
+        - application/json
+      consumes:
+        - application/x-www-form-urlencoded
+      parameters:
+        - in: formData
+          name: itemname
+          type: string
+          required: true
+          description: A name of an item.
+        - in: formData
+          name: barcode
+          type: number
+          required: true
+          description: a barcode.
+        - in: formData
+          name: inventoryNo
+          type: number
+          required: true
+          description: the inventory number of an inventory-item.
+        - in: formData
+          name: borrower
+          type: string
+          required: true
+          description: A borrower's name.
+        - in: formData
+          name: comment
+          type: string
+          required: true
+          description: a comment.
+        - in: formData
+          name: fixLocation
+          type: string
+          required: true
+          description: a fix location for an inventory-item.
+      responses:
+        201:
+          description: Created
+        404:
+          description: Not Found
+      
